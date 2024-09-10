@@ -1,0 +1,29 @@
+
+/* Input */
+.custom-input {
+    border-radius: 30px ;
+    padding: 0.75rem ;
+    border: 1px solid #444 ;
+    background: #1c1c1c ;
+    color: #fff ;
+    transition: all 0.3s ;
+  }
+  
+  .custom-input:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    outline: none;
+  }
+  
+  /* Button */
+  .custom-button {
+    border-radius: 30px;
+    padding: 0.75rem;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .custom-button:hover {
+    background: #e0a800;
+    transform: scale(1.05);
+  }
+  
