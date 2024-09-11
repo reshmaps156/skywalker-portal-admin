@@ -1,7 +1,7 @@
-import { faBars, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faBoxesStacked, faInbox, faJedi } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react'
-import { Sidebar, Menu, MenuItem} from 'react-pro-sidebar';
+import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 
 function SideControls() {
     const [isCollapsed, setIsCollpased] = useState(false)
@@ -24,19 +24,19 @@ function SideControls() {
         }
     }, [])
     return (
-        <Sidebar collapsed={isCollapsed } backgroundColor='black'  className='shadow h-100 border-0'>
-            <FontAwesomeIcon icon={faBars} onClick={handleCollpase} size='2xl ps-4 mt-4 mb-3 text-warning'/>
+        <Sidebar collapsed={isCollapsed} backgroundColor='#101010' className='shadow h-100 border-0' >
+            <div className=' border border-4 border-warning rounded-circle d-flex align-items-center justify-content-center ms-3 my-4 ' style={{ width: '40px', height: '40px', cursor: 'pointer' }} onClick={handleCollpase}>
+                <FontAwesomeIcon icon={faJedi} size='xl  text-warning' />
+            </div>
             <Menu menuItemStyles={{
-                button:{
-                    // "color": "yellow",
-                    ":hover": { backgroundColor: 'grey', color: 'white' }
+                button: {
+                    
+                    ":hover": { backgroundColor: '#2b2b2b', color: 'white', borderEndEndRadius:'20px',borderTopRightRadius:'20px'}
                 }
             }}>
-                
-                <MenuItem> Documentation </MenuItem>
-                <MenuItem> Calendar </MenuItem>
-                <MenuItem> Calendar </MenuItem>
-                <MenuItem ><FontAwesomeIcon icon={faPowerOff} size='xl' className='text-warning me-3'/> Logout </MenuItem>
+                <MenuItem> <FontAwesomeIcon icon={faBoxesStacked} size='xl' className=' me-3 ' />Dashboard </MenuItem>
+                <MenuItem> <FontAwesomeIcon icon={faInbox} size='xl' className=' me-3 ' />Inbox </MenuItem>
+                <MenuItem ><FontAwesomeIcon icon={faArrowRightFromBracket} size='xl' className=' me-3 ' /> Logout </MenuItem>
             </Menu>
         </Sidebar>
     )
