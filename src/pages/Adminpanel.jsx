@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import Inbox from '../components/Inbox'
 import Overview from '../components/Overview'
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Adminpanel() {
@@ -11,6 +13,7 @@ function Adminpanel() {
   const [isCollapsed, setIsCollpased] = useState(false)
   const [isOverview,setIsOverview] = useState(true)
   const [isInbox,setIsInbox] = useState(false)
+  const navigate = useNavigate()
   const handleCollpase = () => {
     setIsCollpased(!isCollapsed)
   }
@@ -22,6 +25,14 @@ function Adminpanel() {
     setIsInbox(true)
     setIsOverview(false)
   }
+
+  const handleLogout = ()=>{
+   sessionStorage.removeItem("token")
+   sessionStorage.removeItem("currentAdmin")
+   navigate('/')
+    
+  }
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
@@ -54,7 +65,7 @@ function Adminpanel() {
           }}>
             <MenuItem onClick={openOverview}> <FontAwesomeIcon icon={faBoxesStacked} size='xl' className=' me-3 ' />Dashboard </MenuItem>
             <MenuItem onClick={openInbox}> <FontAwesomeIcon icon={faInbox} size='xl' className=' me-3 ' />Inbox </MenuItem>
-            <MenuItem ><FontAwesomeIcon icon={faArrowRightFromBracket} size='xl' className=' me-3 ' /> Logout </MenuItem>
+            <MenuItem onClick={handleLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} size='xl' className=' me-3 ' /> Logout </MenuItem>
           </Menu>
         </Sidebar>
         <div className='mt-5 w-100'>
