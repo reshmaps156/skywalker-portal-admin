@@ -7,6 +7,11 @@ export const loginApi = async(reqBody)=>{
 }
 
 //api to get grievances
-export const inboxApi = async()=>{
-    return await commonApi('GET',`${serverUrl}/admin/grievances`)
+export const inboxApi = async(searchKey)=>{
+    return await commonApi('GET',`${serverUrl}/admin/grievances?search=${searchKey}`)
+}
+
+//delete the grievance
+export const deleteGrievanceApi = async(id)=>{
+    return await commonApi('DELETE',`${serverUrl}/admin/grievance/${id}`)
 }

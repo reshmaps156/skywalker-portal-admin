@@ -1,13 +1,16 @@
 import React, { useContext } from 'react';
 import { viewMessageContext } from '../utils/Datashare';
 import { Card, Container, Row, Col, Badge } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 function Message() {
   const { viewMessage } = useContext(viewMessageContext);
   
-
   return (
-    <Container className="my-5">
+    <Container className="my-5 d-flex align-items-center justify-content-center flex-column">
       <Row className="justify-content-center">
         <Col md={10}>
           <Card
@@ -32,7 +35,7 @@ function Message() {
                 Date: {new Date(viewMessage.submitTime).toLocaleDateString() || 'Unknown Date'}
               </Card.Subtitle>
               <Card.Text className="text-white mb-4" style={{ lineHeight: '1.6' }}>
-                {viewMessage.message || (
+                {viewMessage.grievanceDetails || (
                   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ipsum quaerat, beatae perferendis quam similique placeat. Nulla, mollitia id dolore amet debitis, dicta recusandae dignissimos deserunt esse iusto excepturi quia?'
                 )}
               </Card.Text>
@@ -51,7 +54,9 @@ function Message() {
             </Card.Body>
           </Card>
         </Col>
+       
       </Row>
+      <Link to={'/inbox'}><button className='btn btn-outline-warning mt-5 px-4 py-2' ><FontAwesomeIcon icon={faAnglesLeft} className='me-2'/>Back</button></Link>
     </Container>
   );
 }

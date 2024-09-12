@@ -5,6 +5,7 @@ import { BarChart } from '@mui/x-charts/BarChart';
 import Card from 'react-bootstrap/Card';
 import 'leaflet/dist/leaflet.css';
 
+
 function Overview() {
 
   return (
@@ -56,7 +57,7 @@ function Overview() {
       </div>
 
       <div className="row" >
-        <div className="col-md-4">
+        <div className="col-md-8">
           <div className=" rounded-3 p-4 mb-3" style={{ backgroundColor: '#1f1f1f', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
             <h5 className="mb-3 fw-bold" >Levels</h5>
             <p className="text-muted" >Performance Chart</p>
@@ -65,6 +66,7 @@ function Overview() {
                 { data: [48, 50, 60], color: '#2a9fd6' },
                 { data: [30, 42, 40], color: '#77b300' },
                 { data: [18, 8, 20], color: '#ff8800' },
+                
 
               ]}
               height={200}
@@ -73,9 +75,7 @@ function Overview() {
             />
           </div>
         </div>
-        <div className="col-md-8">
-
-        </div>
+       
       </div>
     </>
 
