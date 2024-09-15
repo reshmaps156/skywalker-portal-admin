@@ -12,18 +12,19 @@ function Message() {
   return (
     <Container className="my-5 d-flex align-items-center justify-content-center flex-column">
       <Row className="justify-content-center">
-        <Col md={10}>
+        <Col md={10} className='w-100'>
           <Card
-            className="shadow-lg p-4"
+            className="shadow-lg p-4 "
             style={{
               backgroundColor: '#1c1c1c',
               borderRadius: '20px',
               color: '#fff',
               border: 'none',
+              width:'100%'
             }}
           >
             <Card.Body>
-              <div className="d-flex justify-content-between align-items-center mb-3">
+              <div className="d-flex justify-content-between align-items-center mb-3 ">
                 <Card.Title className="text-warning fs-4">
                   {viewMessage.subject || 'No Subject'}
                 </Card.Title>
