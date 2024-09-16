@@ -27,7 +27,7 @@ function Adminpanel() {
     <>
       <div className=" m-0 p-0 d-flex " style={{ backgroundColor: '#101010' }}>
         <SideNav/>
-        <div className='mt-5'style={{overflowX:'hidden'}}>
+        <div className='mt-5 w-100'style={{overflowX:'hidden'}}>
           {
             <Overview/>
           }
