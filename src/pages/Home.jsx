@@ -53,7 +53,7 @@ function Home() {
             <input type="text" placeholder='email' value={loginDetails.email} className='custom-input w-100' onChange={(e) => setLoginDetails({ ...loginDetails, email: e.target.value })} />
           </div>
           <div className='mb-4'>
-            <input type="text" placeholder='password' value={loginDetails.password} className=' custom-input w-100' onChange={(e) => setLoginDetails({ ...loginDetails, password: e.target.value })} />
+            <input type="password" placeholder='password' value={loginDetails.password} className=' custom-input w-100' onChange={(e) => setLoginDetails({ ...loginDetails, password: e.target.value })} />
           </div>
           <button className='btn-warning  w-100 mb-4 custom-button' onClick={handleLogin}>Login</button>
         </Col>
