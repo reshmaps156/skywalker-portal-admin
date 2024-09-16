@@ -1,11 +1,27 @@
-import React from 'react'
+import React, {  useContext, useEffect } from 'react'
 import Overview from '../components/Overview'
 import SideNav from '../components/SideNav';
+import { userRequestContext } from '../utils/Datashare';
+import { inboxApi } from '../services/api';
 
 
 
 function Adminpanel() {
-
+  const {setUserRequest} = useContext(userRequestContext)
+  const getUserData = async () => {
+    try {
+      const result = await inboxApi('');
+      const fetchedInbox = result.data;
+      console.log(fetchedInbox);
+      setUserRequest(fetchedInbox)
+      
+    } catch (error) {
+      console.error('Error fetching inbox data:', error);
+    }
+  };
+  useEffect(()=>{
+    getUserData()
+  },[])
   return (
 
     <>
