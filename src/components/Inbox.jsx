@@ -40,7 +40,7 @@ function Inbox() {
   }, [searchKey]); 
 
   return (
-    <div className="w-100 m-0 p-0 d-flex" style={{ backgroundColor: '#101010' }}>
+    <div className="w-100 m-0 p-0 d-flex" >
       <SideNav />
       <div className='mt-5 w-100'>
         <div className='px-md-4'>
@@ -49,7 +49,7 @@ function Inbox() {
               style={{color:'white'}}
               type="text"
               className='form-control w-25 mb-3 rounded-5 bg-secondary'
-              placeholder='Search subject'
+              placeholder='Search'
               onChange={(e) => setSearchKey(e.target.value)}
             />
             <div className='d-flex mb-3 align-items-center'>
