@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faCircleXmark, faEnvelopesBulk, faHourglassHalf } from '@fortawesome/free-solid-svg-icons';
 import Card from 'react-bootstrap/Card';
-import 'leaflet/dist/leaflet.css';
 import Piechart from './Piechart';
 import Barchart from './Barchart';
 import { userRequestContext } from '../utils/Datashare';
@@ -13,15 +12,15 @@ function Overview() {
   const totalReq = userRequest.length
   const overviewData = [{ icon: faEnvelopesBulk, value: totalReq, caption: 'Total Requests', color: 'text-primary' },
     
-  { icon: faCircleCheck, value: 0, caption: 'Resolved Requests', color: 'text-success' },
-  { icon: faHourglassHalf, value: 0, caption: 'Pending Requests', color: 'text-warning' },
-  { icon: faCircleXmark, value: 0, caption: 'Rejected Requests', color: 'text-danger' }]
+  { icon: faCircleCheck, value:" 89%", caption: 'Success Rate', color: 'text-success' },
+  { icon: faHourglassHalf, value: totalReq, caption: 'Pending Requests', color: 'text-warning' },
+  { icon: faCircleXmark, value: '11%', caption: 'Failure Rate', color: 'text-danger' }]
   
     
   return (
 
     <>
-      <div className="w-100" style={{ padding: '20px' }}>
+      <div style={{ padding: '20px' }}>
         <div >
           <div className=" rounded-3 p-4 mb-3 row" style={{ backgroundColor: '#1f1f1f', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
             <h5 className="mb-2" style={{ fontWeight: 'bold' }}>Overview</h5>
@@ -44,7 +43,7 @@ function Overview() {
         </div>
       </div>
 
-      <div className="row w-100"   >
+      <div className="row "   >
         <div className="col-md-7">
           <div className=" rounded-3 p-4 mb-3" style={{ backgroundColor: '#1f1f1f', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
             <h5 className="mb-3 fw-bold" >Levels</h5>
@@ -52,8 +51,8 @@ function Overview() {
             <Barchart />
           </div>
         </div>
-        <div className="col-md-5 rounded-2 p-4" style={{ backgroundColor: '#1f1f1f', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
-          <h5 className='fw-bold mb-3'>Priority</h5>
+        <div className="col-md-5 rounded-2  " style={{ backgroundColor: '#1f1f1f', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
+          <h5 className='fw-bold mb-3 p-4'>Priority</h5>
           <Piechart />
         </div>
 

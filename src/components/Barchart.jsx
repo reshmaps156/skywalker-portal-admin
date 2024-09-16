@@ -1,6 +1,10 @@
 import React from 'react'
 import { BarChart } from '@mui/x-charts/BarChart';
+
 function Barchart() {
+  
+    
+    
     return (
         <BarChart className='bg-secondary rounded'
             series={[

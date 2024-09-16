@@ -8,7 +8,7 @@ function Piechart() {
     const totalLow = userRequest.filter(req=>req.priority=='Low').length
   
   return (
-    <PieChart 
+    <PieChart className='p-4 p-md-0'
     colors={['red,orange,yellow']}
       series={[
         {

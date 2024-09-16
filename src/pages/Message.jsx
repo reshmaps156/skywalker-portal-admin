@@ -8,7 +8,7 @@ import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Message() {
   const { viewMessage } = useContext(viewMessageContext);
-  
+
   return (
     <Container className="my-5 d-flex align-items-center justify-content-center flex-column">
       <Row className="justify-content-center">
